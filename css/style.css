@@ -1,0 +1,304 @@
+/* 
+
+- Soft orange: hsl(35, 77%, 62%)
+- Soft red: hsl(5, 85%, 63%)
+
+Off-white: hsl(36, 100%, 99%)
+Grayish blue: hsl(233, 8%, 79%)
+Dark grayish blue: hsl(236, 13%, 42%)
+Very dark blue: hsl(240, 100%, 5%)
+
+- Weights: 400, 700, 800
+
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+nav {
+  padding: 2rem 17vw 2rem 15vw;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger-btn {
+  outline: none;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  z-index: 100;
+}
+
+.nav-menu {
+  background-color: white;
+  border-bottom-left-radius: 12px;
+  position: absolute;
+  top: 35%;
+  right: 16%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  /* transform: translateX(100%); */
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+.nav-menu svg {
+  outline: none;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 4rem;
+  margin-right: 0.7rem;
+  z-index: 0;
+}
+
+.nav-items-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-items {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+main > section,
+.new,
+.trends {
+  width: 70%;
+  margin-bottom: 3em;
+}
+
+main > section img {
+  width: 100%;
+}
+
+main > section > article > h1 {
+  font-size: 2.2em;
+  padding-block: 0.4em;
+}
+
+main > section > article p,
+main > .trends p {
+  opacity: 0.7;
+}
+
+main > section > article button {
+  background-color: hsl(5, 85%, 63%);
+  padding: 0.8em 3em;
+  color: #fff;
+  border: none;
+
+  margin-block: 1em;
+}
+
+.new {
+  padding: 1.5em 2em;
+  background-color: #000;
+  color: #fff;
+}
+
+.new h1 {
+  color: hsl(35, 77%, 62%);
+  margin-bottom: 0.5em;
+}
+
+.new h2 {
+  border-top: 1px solid hsla(36, 100%, 99%, 0.308);
+  padding-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.new p {
+  max-width: 50ch;
+  color: hsl(36, 100%, 99%);
+  opacity: 0.8;
+  font-size: 12px;
+  margin-bottom: 1.7em;
+}
+
+.trends div.trend {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.trends .trend strong {
+  font-size: 3em;
+  color: hsl(233, 8%, 79%);
+  margin-top: 0.5em;
+}
+
+.trends .trend img {
+  width: 40%;
+}
+
+.trends .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3em;
+  width: 50%;
+}
+
+.trends .info h3 {
+  font-size: 3vw;
+  margin-top: 1.5em;
+}
+
+.trends .info p {
+  margin-top: 1.5em;
+  font-size: 2.2vw;
+  max-width: 30ch;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    padding: 2rem 0;
+    margin: 0 auto;
+    width: 900px;
+  }
+
+  .nav-menu {
+    position: relative;
+    opacity: 1;
+  }
+
+  .nav-menu svg,
+  .hamburger-btn {
+    display: none;
+  }
+
+  .nav-items-list {
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 1.2em;
+  }
+
+  .nav-items {
+    margin-bottom: 0;
+  }
+
+  .nav-items:hover,
+  .trends h3:hover {
+    cursor: pointer;
+    color: hsl(5, 85%, 63%);
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: #000;
+  }
+
+  .new h2:hover {
+    cursor: pointer;
+    color: hsl(35, 77%, 62%);
+  }
+
+  main {
+    margin-inline: auto;
+    flex-direction: row;
+    /* justify-content: flex-start; */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 900px;
+    gap: 2%;
+  }
+
+  main > section,
+  .new,
+  .trends {
+    margin-bottom: 0;
+  }
+
+  main > section:first-child {
+    width: 65%;
+    height: 100%;
+  }
+
+  main > section:first-child img {
+    width: 100%;
+  }
+
+  main > section:first-child > article {
+    display: flex;
+  }
+
+  main > section:first-child > article > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 1em;
+  }
+
+  main > section:first-child > article > div > p {
+    font-size: 0.9em;
+    width: 35ch;
+  }
+
+  .new {
+    width: 33%;
+  }
+
+  .new h2 {
+    font-size: 1.2em;
+  }
+
+  .trends {
+    display: flex;
+    width: 100%;
+  }
+
+  .trends .trend strong {
+    font-size: 2.3em;
+    color: hsl(233, 8%, 79%);
+    margin-top: 0;
+  }
+
+  .trends .trend img {
+    width: 6em;
+  }
+
+  .trends .info {
+    width: 70%;
+    margin-left: 0.7em;
+  }
+
+  .trends .info h3 {
+    font-size: 1.2em;
+    margin-top: 0;
+  }
+
+  .trends .info p {
+    margin-top: 0;
+    font-size: 0.9em;
+    max-width: 30ch;
+  }
+}
